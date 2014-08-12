@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Reptile {
-
+	//Application context can be used instead of bean factory, since it has more functionality anyway.
 	static ApplicationContext context; 
 	
 	public static void main(String[] args) {
