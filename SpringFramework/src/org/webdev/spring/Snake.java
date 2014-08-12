@@ -12,7 +12,7 @@ public class Snake {
 	}
 
 	public void display() {
-		System.out.println(getType() + " is a big fat snake!");
+		System.out.println(getType() + "s is a big fat snake!");
 	}
 
 }
