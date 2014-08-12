@@ -3,7 +3,11 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
 <bean id="snake" class="org.webdev.spring.Snake">
-<property name="type" value="Anaconda"/>
+<constructor-arg index="0" value="Anaconda" />
+<constructor-arg index="1" value="20" />
+<constructor-arg index="2" value="8" />
+
+
 </bean>
 
 </beans>
