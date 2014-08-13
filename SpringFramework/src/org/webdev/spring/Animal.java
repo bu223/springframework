@@ -9,8 +9,8 @@ public class Animal {
 	
 	public static void main(String[] args) {
 		context = new ClassPathXmlApplicationContext("spring.xml");
-		Mammals mammals = (Mammals) context.getBean("mammal");
-		mammals.display();
+		Mammals mammal = (Mammals) context.getBean("mammal3");
+		mammal.display();
 		
 
 	}

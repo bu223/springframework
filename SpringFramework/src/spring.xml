@@ -2,13 +2,36 @@
 
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-	<bean id="mammal" class="org.webdev.spring.Mammals">
+	<bean id="mammals" class="org.webdev.spring.Mammals">
 		<property name="primates">
 			<list>
-			<ref bean="ape1"/>
-			<ref bean="ape2"/>
-			<ref bean="ape3"/>
-			<ref bean="ape4"/>
+				<ref bean="ape1"/>
+			</list>
+		</property>
+	</bean>
+		
+	<bean id="mammal2" class="org.webdev.spring.Mammals" parent="mammals">
+		<property name="primates">
+			<list merge="true">
+				<ref bean="ape2"/>
+			</list>
+		</property>
+	</bean>
+		
+		<bean id="mammal3" class="org.webdev.spring.Mammals" parent="mammals">
+		<property name="primates">
+			<list merge="true">
+				<ref bean="ape2"/>
+				<ref bean="ape3"/>
+				<ref bean="ape4"/>
+			</list>
+		</property>
+	</bean>
+	
+		<bean id="mammal4" class="org.webdev.spring.Mammals" parent="mammals">
+		<property name="primates">
+			<list merge="true">
+				<ref bean="ape4"/>
 			</list>
 		</property>
 	</bean>

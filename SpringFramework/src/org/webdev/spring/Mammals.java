@@ -6,13 +6,14 @@ public class Mammals {
 	private List<Primate> primates;
 	
 	
-	
+
 	/**
 	 * @return the primates
 	 */
 	public List<Primate> getPrimates() {
 		return primates;
 	}
+
 
 
 	/**
@@ -25,10 +26,10 @@ public class Mammals {
 
 
 	public void display() {
-		for (Primate primate : primates) {
-			System.out.println(primate.getApes() + " are all examples of apes.");
-		}
 		
+		for (Primate primate : primates) {
+			System.out.println(primate.getApes() + " are types of apes found both in Asia and Africa");
+		}
 	}
 	
 }
