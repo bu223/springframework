@@ -2,12 +2,30 @@
 
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-<bean id="snake" class="org.webdev.spring.Snake">
-<constructor-arg index="0" value="Anaconda" />
-<constructor-arg index="1" value="20" />
-<constructor-arg index="2" value="8" />
+	<bean id="mammal" class="org.webdev.spring.Mammals">
+	<property name="gorilla" ref="ape1" />
+	<property name="gibbons" ref="ape2" />
+	<property name="siamangs" ref="ape3" />
+	<property name="bonobos" ref="ape4" />
+	</bean>
+
+	<bean id="ape1" class="org.webdev.spring.Primate">
+		<property name="apes" value="gorilla" />
+		</bean>
+
+	<bean id="ape2" class="org.webdev.spring.Primate">
+		<property name="apes" value="gibbons" />
+		</bean>
 
 
-</bean>
+	<bean id="ape3" class="org.webdev.spring.Primate">
+		<property name="apes" value="siamangs" />
+		</bean>
+
+	<bean id="ape4" class="org.webdev.spring.Primate">
+		<property name="apes" value="bonobos" />
+		</bean>
 
 </beans>
+
+
