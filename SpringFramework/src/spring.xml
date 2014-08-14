@@ -2,60 +2,31 @@
 
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-	<bean id="mammals" class="org.webdev.spring.Mammals">
-		<property name="primates">
-			<list>
-				<ref bean="ape1"/>
-			</list>
-		</property>
-	</bean>
-		
-	<bean id="mammal2" class="org.webdev.spring.Mammals" parent="mammals">
-		<property name="primates">
-			<list merge="true">
-				<ref bean="ape2"/>
-			</list>
-		</property>
-	</bean>
-		
-		<bean id="mammal3" class="org.webdev.spring.Mammals" parent="mammals">
-		<property name="primates">
-			<list merge="true">
-				<ref bean="ape2"/>
-				<ref bean="ape3"/>
-				<ref bean="ape4"/>
-			</list>
-		</property>
-	</bean>
+	<bean id="primate" class="org.webdev.spring.Primate">
+		<property name="gorilla" ref="gorilla" />
+		<property name="gibbons" ref="gibbons" />
+	 </bean>
+	 
+	 <bean id="gorilla" class="org.webdev.spring.MammalAtrr"> 
+	 	<property name="size" value="396" />
+	 </bean>
+	 
+	  <bean id="gibbons" class="org.webdev.spring.MammalAtrr"> 
+	 	<property name="size" value="15" />
+	 </bean>
+	 
+	 <bean id="carnivore" class="org.webdev.spring.Carnivore">
+		<property name="dog" ref="dog" />
+		<property name="cat" ref="cat" />
+	 </bean>
 	
-		<bean id="mammal4" class="org.webdev.spring.Mammals" parent="mammals">
-		<property name="primates">
-			<list merge="true">
-				<ref bean="ape4"/>
-			</list>
-		</property>
-	</bean>
-
-	<bean id="ape1" class="org.webdev.spring.Primate">
-		<property name="apes" value="${apes.gorilla}" />
-		</bean>
-
-	<bean id="ape2" class="org.webdev.spring.Primate">
-		<property name="apes" value="${apes.gibbons}" />
-		</bean>
-
-
-	<bean id="ape3" class="org.webdev.spring.Primate">
-		<property name="apes" value="${apes.siamangs}" />
-		</bean>
-
-	<bean id="ape4" class="org.webdev.spring.Primate">
-		<property name="apes" value="${apes.bonobos}" />
-		</bean>
-		
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
-		<property name="locations" value="mammals.properties" />
-	</bean>
+	 <bean id="dog" class="org.webdev.spring.MammalAtrr"> 
+	 	<property name="size" value="22" />
+	 </bean>
+	 
+	 <bean id="cat" class="org.webdev.spring.MammalAtrr"> 
+	 	<property name="size" value="11" />
+	 </bean>
 
 </beans>
 
