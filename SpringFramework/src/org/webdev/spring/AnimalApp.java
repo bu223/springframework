@@ -3,7 +3,7 @@ package org.webdev.spring;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Animal {
+public class AnimalApp {
 	//Application context can be used instead of bean factory, since it has more functionality anyway.
 	static ApplicationContext context; 
 	
