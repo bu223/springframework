@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<beans default-init-method="myInit" default-destroy-method="cleanUp">
+<beans>
 	<bean id="mammals" class="org.webdev.spring.Mammals">
 		<property name="primates">
 			<list>
@@ -52,6 +52,8 @@
 	<bean id="ape4" class="org.webdev.spring.Primate">
 		<property name="apes" value="Bonobos" />
 		</bean>
+		
+	<bean class="org.webdev.spring.DisplayBeanNamePostprocessor" />
 
 </beans>
 
