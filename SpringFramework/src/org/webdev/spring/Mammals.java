@@ -32,4 +32,12 @@ public class Mammals {
 		}
 	}
 	
+	public void myInit() {
+		System.out.println("My init method called on mammals");
+	}
+	
+	public void cleanUp() {
+		System.out.println("My cleanup method called on mammals");
+	}
+	
 }
