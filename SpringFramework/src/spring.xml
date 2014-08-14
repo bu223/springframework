@@ -37,23 +37,25 @@
 	</bean>
 
 	<bean id="ape1" class="org.webdev.spring.Primate">
-		<property name="apes" value="Gorilla" />
+		<property name="apes" value="${apes.gorilla}" />
 		</bean>
 
 	<bean id="ape2" class="org.webdev.spring.Primate">
-		<property name="apes" value="Gibbons" />
+		<property name="apes" value="${apes.gibbons}" />
 		</bean>
 
 
 	<bean id="ape3" class="org.webdev.spring.Primate">
-		<property name="apes" value="Siamangs" />
+		<property name="apes" value="${apes.siamangs}" />
 		</bean>
 
 	<bean id="ape4" class="org.webdev.spring.Primate">
-		<property name="apes" value="Bonobos" />
+		<property name="apes" value="${apes.bonobos}" />
 		</bean>
 		
-	<bean class="org.webdev.spring.DisplayBeanNamePostprocessor" />
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+		<property name="locations" value="mammals.properties" />
+	</bean>
 
 </beans>
 
