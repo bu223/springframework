@@ -4,12 +4,16 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
-public class Carnivore implements Mammals{
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Carnivore implements Mammals, ApplicationEventPublisherAware{
 	private MammalAtrr dog;
 	private MammalAtrr cat;
 	
-	
-	
+	private ApplicationEventPublisher publisher;
 	
 	
 	/**
@@ -53,7 +57,9 @@ public class Carnivore implements Mammals{
 							+ "lbs to very big"); 
 		System.out.println("Depending on the cat type it size might vary from " + getCat().getSize()
 				+ "lbs to very big"); 
-		
+		DisplayEvent displayEvent = new DisplayEvent(this);
+		publisher.publishEvent(displayEvent);
+	
 	}
 	
 	
@@ -65,6 +71,12 @@ public class Carnivore implements Mammals{
 	@PreDestroy
 	public void destroyCarnivore() {
 		System.out.println("Destroying carnivore");
+	}
+
+	@Override
+	public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {
+		this.publisher = publisher;
+		
 	}
 
 
